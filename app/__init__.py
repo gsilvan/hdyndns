@@ -116,5 +116,5 @@ def update(
         if len(aaaa_record_id) == 0:
             dns.create_record(host, 60, "AAAA", ipv6, _zone_id)
         else:
-            dns.update_record(host, 60, "AAAA", ipv6, _zone_id, _record_id)
+            dns.update_record(host, 60, "AAAA", ipv6, _zone_id, aaaa_record_id)
     return Response(status_code=HTTP_200_OK)
