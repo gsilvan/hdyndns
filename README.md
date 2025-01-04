@@ -38,7 +38,7 @@ certbox --nginx
 
 1. Log into https://dns.hetzner.com/ and get a API token.
 2. Log into your Fritz!Box http://fritz.box -> Internet -> Freigaben -> DynDNS
-3. Update-URL: `https://dynupdate.example.com/update?zone=<domain>&host=<username>&password=<pass>&ip=<ipaddr>`
+3. Update-URL: `https://dynupdate.example.com/update?zone=<domain>&host=<username>&password=<pass>&ip=<ipaddr>&ipv6=<ip6addr>`
 4. Domainname: `example.com`
 5. Benutzername: `dyn` (your dynamic host)
 6. Kennwort: `HETZNER_API_TOKEN`
