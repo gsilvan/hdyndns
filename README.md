@@ -14,7 +14,7 @@ cd hdyndns
 docker build -t hdyndns .
 
 # 3. Run the Docker image
-docker run -p 127.0.0.1:56846:56846 -d hdyndns
+docker run -p 127.0.0.1:56846:56846 -d --restart=unless-stopped hdyndns
 
 # 4. Put nginx reverse proxy up front
 vim /etc/nginx/nginx.conf
