@@ -11,10 +11,11 @@ def update(
     host: str,
     password: str,
     ip: str,
-    ipv6: str,
 ):
     client = Client(token=password)
-    records = [("A", ip), ("AAAA", ipv6)]
+    records = [
+        ("A", ip),
+    ]
     for record_type, ip in records:
         client.zones.set_rrset_records(
             rrset=ZoneRRSet(
