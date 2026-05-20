@@ -17,7 +17,7 @@ def update(
         ("A", ip),
     ]
     for record_type, ip in records:
-        client.zones.set_rrset_records(
+        action = client.zones.set_rrset_records(
             rrset=ZoneRRSet(
                 zone=Zone(name=zone),
                 name=host,
@@ -27,4 +27,5 @@ def update(
                 ZoneRecord(value=ip),
             ],
         )
+        action.wait_until_finished()
     return Response(status_code=200)
