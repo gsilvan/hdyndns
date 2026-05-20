@@ -1,3 +1,5 @@
+import typing
+
 from fastapi import FastAPI, Response
 from hcloud import Client
 from hcloud.zones import Zone, ZoneRecord, ZoneRRSet
@@ -11,11 +13,14 @@ def update(
     host: str,
     password: str,
     ip: str,
+    ipv6: typing.Optional[str] = None,
 ):
     client = Client(token=password)
     records = [
         ("A", ip),
     ]
+    if ipv6:
+        records.append(("AAAA", ipv6))
     for record_type, ip in records:
         action = client.zones.set_rrset_records(
             rrset=ZoneRRSet(
