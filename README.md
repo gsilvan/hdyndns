@@ -31,12 +31,12 @@ server {
 systemctl reload nginx
 
 # 5. Get a SSL cert via Let's Encrypt
-certbox --nginx
+certbot --nginx
 ```
 
 ### Client
 
-1. Log into https://dns.hetzner.com/ and get a API token.
+1. Log into https://console.hetzner.com/, open the project containing your DNS zone, and create a Read & Write API token under Security -> API Tokens.
 2. Log into your Fritz!Box http://fritz.box -> Internet -> Freigaben -> DynDNS
 3. Update-URL: `https://dynupdate.example.com/update?zone=<domain>&host=<username>&password=<pass>&ip=<ipaddr>&ipv6=<ip6addr>`
 4. Domainname: `example.com`
